@@ -20,7 +20,7 @@ if st.button("Three reasons why you should grow your own vegetable"):
   2. You eat too much fast food and processed foods
   3. You buy vegetables which are wrapped in a lot of unnecessary plastic""")
 else: 
-  st.write("Click the button to learn more about the issues Peterly tries to address."
+  st.write("Click the button to learn more about the issues Peterly tries to address.")
 
   
 
