@@ -13,7 +13,7 @@ Based on your available space, your water availability and other preferences
 you will receive personalized plant recommendations and insstructions:)""")
 
 #Buttons
-st.subheader("Peterly tries to help students life a healthier an happier life...") 
+st.subheader("Peterli tries to help students life a healthier an happier life...") 
 if st.button("Three reasons why you should grow your own vegetable"):
   st.write("""
   1. You have a poor connection to nature due to urban living and staying inside
