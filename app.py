@@ -7,7 +7,8 @@ st.set_page_config(page_title="Gardening App for Students", page_icon=":seedling
 #Title & Intro
 st.title("🌱 Peterli")
 # """ is needed to make spaces between the lines
-st.write("""Welcome to the gardening app for students and plant-friends! 
+st.write("""Welcome to the gardening app for students and plant-friends!
+
 Peterli facilitates growing your own vegetables and herbs: 
 Based on your available space, your water availability and other preferences
 you will receive personalized plant recommendations and instructions:)""")
