@@ -1,4 +1,4 @@
-#Project_repo
+Title("Project_repo")
 This is the repository for the FCS project
 
 This is the description of the Group number 5.3, we will focus on making a tool for students that will help them find and grow matching vegetables and herbs. 
