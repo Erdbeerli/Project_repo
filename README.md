@@ -10,3 +10,6 @@ Further steps:
 4.	denn no de output
 5.	Inkl. das machinelearning zügs: Clustern (gruppen von Pflanzen etc.) bi de Pflanze wär no en option als machine Learning
 6.	Video Production
+
+IMPORTANT: 
+whenever you download a library do not forget to write it down in the "requirements.txt" file!!!
