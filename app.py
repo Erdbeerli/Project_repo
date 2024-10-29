@@ -2,9 +2,12 @@
 import streamlit as st
 import pandas as pd
 
-#imported from Feature-Files (Example)
+#other imports from Feature-Files (Example)
 from Feature_01 import return_even
 from Feature_02 import return_odd
+
+#Tab Title (Titel der Registerkarte)
+st.set_page_config(page_title="Gardening App for Students", page_icon=":seedling:")
 
 #examples from the GitHub Video 1.2
 original_list = [i for i in range(10)]
@@ -22,10 +25,6 @@ st.write(even_list)
 st.write(odd_list)
 
 #HERE STARTS OUR PLANT WEB APPLICATION
-
-
-#Tab Title (Titel der Registerkarte)
-st.set_page_config(page_title="Gardening App for Students", page_icon=":seedling:")
 
 #Title & Intro
 st.title("🌱 Peterli")
