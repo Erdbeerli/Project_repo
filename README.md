@@ -20,3 +20,4 @@ Merging Conflict what to do?
 or Accept Incoming Change
 or Accept Both Changes
 or Compare Changes
+-> WHEN YOU ARE NOT WORKING ON IT PLEASE "CLOSE REMOTE WORKSPACE"
