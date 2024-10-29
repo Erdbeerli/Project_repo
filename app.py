@@ -1,10 +1,27 @@
 # Required Libraries
 import streamlit as st
-from Feature_01 import return_even
 
+#imported from Feature-Files (Example)
+from Feature_01 import return_even
+from Feature_02 import return_odd
+
+#examples from the GitHub Video 1.2
 original_list = [i for i in range(10)]
 
 even_list = return_even(original_list)
+
+odd_list = return_odd(original_list)
+
+st.write("Hooray, we connected everything")
+
+st.write("Hello_02")
+
+st.write(even_list)
+
+st.write(odd_list)
+
+#HERE STARTS OUR PLANT WEB APPLICATION
+
 
 #Tab Title (Titel der Registerkarte)
 st.set_page_config(page_title="Gardening App for Students", page_icon=":seedling:")

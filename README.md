@@ -13,3 +13,10 @@ Further steps:
 
 IMPORTANT: 
 whenever you download a library do not forget to write it down in the "requirements.txt" file!!!
+
+Merging Conflict what to do? 
+1. Pull Changes
+2. Accept current change
+or Accept Incoming Change
+or Accept Both Changes
+or Compare Changes
