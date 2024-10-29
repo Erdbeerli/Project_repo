@@ -12,7 +12,7 @@ Further steps:
 6.	Video Production
 
 IMPORTANT: 
-whenever you download a library do not forget to write it down in the "requirements.txt" file!!!
+WHENEVER YOU DOWNLOAD A LIBRARY DO NOT FORGET TO WRITE IT DOWN IN THE "requirements.txt" FILE!!!
 
 Merge-Conflict what to do? 
 """1. Pull Changes
