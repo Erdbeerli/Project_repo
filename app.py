@@ -1,5 +1,10 @@
 # Required Libraries
 import streamlit as st
+from Feature_01 import return_even
+
+original_list = [i for i in range(10)]
+
+even_list = return_even(original_list)
 
 #Tab Title (Titel der Registerkarte)
 st.set_page_config(page_title="Gardening App for Students", page_icon=":seedling:")
