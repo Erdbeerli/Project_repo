@@ -47,7 +47,6 @@ else:
   st.write("Click the button to learn more about the issues Peterli tries to address.")
 
 #Test von Lara
-import streamlit as st
 st.title("Gardening App")
 st.write("""Welcome to the gardening app for students and plant-friends!""")
 
