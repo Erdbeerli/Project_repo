@@ -9,7 +9,7 @@ base_url = "https://openfarm.cc/api/v1/crops"
 
 
 # Set up parameters for the crop you want to search (e.g., "tomato")
-params = {
+plant = {
     #After filter search for a crop
     "filter": "parsley",    
 }
@@ -17,7 +17,7 @@ params = {
 
 
 # Step 1: Sending a GET request to the API including the Query Parameters
-response = requests.get(base_url, params=params)
+response = requests.get(base_url, params=plant)
 
 # Step 2: Check if the request was successful
 if response.status_code == 200:
