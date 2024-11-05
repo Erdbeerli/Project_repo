@@ -59,6 +59,13 @@ data = {
 # Suchleiste
 search_term = st.text_input('Suche nach Pflanze')
 
+#Slider
+st.slider(label="how sunny is your plant's location", min_value=0, max_value=100)
+
+
+
+
+
     
 
   
