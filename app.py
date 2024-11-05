@@ -7,8 +7,10 @@ st.set_page_config(page_title="Gardening App for Students", page_icon=":seedling
 
 #HERE STARTS OUR PLANT WEB APPLICATION
 
-#Home: Title & Intro
+#HOME: Title & Intro
 def Introduction_WebApp():
+   """Diese Funktion beinhaltet alles, was auf dem Abschnitt HOME angezeigt werden soll"""
+   
    st.title("🌱 Peterli")
    
    # """ is needed to make spaces between the lines
@@ -33,6 +35,12 @@ def Introduction_WebApp():
 
     #Slider
    st.slider(label="how sunny is your plant's location", min_value=0, max_value=100)
+
+#PLANT RECOMMENDATION
+
+#DATA ANALYSIS
+
+#MARKETPLACE
 
 
 #Seitennavigation (in Anlehnung an Streamlit_Project.py von Bookly)
