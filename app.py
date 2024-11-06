@@ -31,10 +31,19 @@ def Introduction_WebApp():
 
 
     #Searchbar
-   search_term = st.text_input('Suche nach Pflanze')
+   search_term = st.text_input('Search for plant')
 
     #Slider
-   st.slider(label="how sunny is your plant's location", min_value=0, max_value=100)
+   st.slider(label="How much space do you have for the plant to spread? Please indicate in cm.", min_value=0, max_value=100)
+
+   #Auswahlfelder
+   options = ['Full Sun ☀️', 'Partial Sun 🌤️', 'No Sun, Shadow ☁️']
+   defaults = None
+   selection = 1
+   selected_option = st.multiselect('How sunny is the place for your plant?', options , default=defaults, max_selections=selection)
+   
+
+
 
 #PLANT RECOMMENDATION
 
