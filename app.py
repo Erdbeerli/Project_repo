@@ -34,10 +34,10 @@ def Introduction_WebApp():
 
 
    # """Beschreibung was unter Plant Recommendation angezeigt wird"""
-   st.write("Under the "Plant recommendation" tab, after entering your available space, the amount of sunlight at the planting site and other criteria, you will receive an optimal recommendation as to which plant you should plant.")
+   st.write("Under the 'Plant recommendation' tab, after entering your available space, the amount of sunlight at the planting site and other criteria, you will receive an optimal recommendation as to which plant you should plant.")
 
    # """Beschreibung was unter I know what I want angezeigt wird"""
-   st.write("If you already know which plant you want to plant, you can search for the corresponding plant in the search bar under the I know what I want tab.")
+   st.write("If you already know which plant you want to plant, you can search for the corresponding plant in the search bar under the 'I know what I want' tab.")
 
    
     #Searchbar
