@@ -11,25 +11,29 @@ st.set_page_config(page_title="Gardening App for Students", page_icon=":seedling
 def Introduction_WebApp():
    """Diese Funktion beinhaltet alles, was auf dem Abschnitt HOME angezeigt werden soll"""
    
-   st.title("🌱 Peterli")
+   st.title("🌱 Gardening App for Students")
    
    # """ is needed to make spaces between the lines
-   st.write("""Welcome to the gardening app for students and plant-friends!
-  Peterli facilitates growing your own vegetables and herbs: 
-  Based on your available space, your water availability and other preferences
-  you will receive personalized plant recommendations and instructions:)""")
+   st.write("""Welcome to our Gardening App for Students and Plant Lovers.
+   With our Gardening App we aim to encourage students to grow more of their
+   own vegetables and herbs. Based on your available space, the amount of sunlight
+   at the planting site and other criteria, we will recommend personalized plants
+   for you to plant!""")
    
+     
    #Buttons
-   st.subheader("Peterli tries to help students life a healthier an happier life...") 
+   st.subheader("Our Gardening App tries to help students life a healthier an happier life...")
+   st.write("In this way, we try to motivate you to lead a healthier life and contribute to urban gardening. Click on the following button to find three reasons why this gardening app could be useful for you.")
    if st.button("Three reasons why you should grow your own vegetables"):
        st.write("""
         1. You have a poor connection to nature due to urban living and staying inside
         2. You eat too much fast food and processed foods
         3. You buy vegetables which are wrapped in a lot of unnecessary plastic""")
    else: 
-       st.write("Click the button to learn more about the issues Peterli tries to address.")
+       st.write("Click the button to learn more about the issues the Gardening App tries to address.")
 
 
+   
     #Searchbar
    search_term = st.text_input('Search for plant')
 
@@ -43,6 +47,11 @@ def Introduction_WebApp():
    selected_option = st.multiselect('How sunny is the place for your plant?', options , default=defaults, max_selections=selection)
    
 
+   #Text von Medea
+   st.write("""Welcome to the gardening app for students and plant-friends!
+   Peterli facilitates growing your own vegetables and herbs: 
+   Based on your available space, your water availability and other preferences
+   you will receive personalized plant recommendations and instructions:)""")
 
 
 #PLANT RECOMMENDATION
