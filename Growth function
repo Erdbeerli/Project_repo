@@ -47,6 +47,8 @@ def get_max_height(crop_name):
         print(f"Request failed with status code: {response.status_code}")
         return None
 
+
+
 # Example usage
 get_max_height("parsley")
 
