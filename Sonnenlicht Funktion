@@ -1,1 +1,63 @@
+def get_plant_info(plant_name):
+    # Funktion, um Informationen zu einer bestimmten Pflanze abzurufen
+    base_url = f"https://openfarm.cc/api/v1/crops/?filter={plant_name}"
+    response = requests.get(base_url)
+
+    if response.status_code == 200:
+        data = response.json()
+        if data['data']:
+            crop = data['data'][0]
+            attributes = crop['attributes']
+            
+            # Extrahieren von spezifischen Feldern
+            name = attributes.get('name')
+            binomial_name = attributes.get('binomial_name')
+            description = attributes.get('description')
+            sun_requirements = attributes.get('sun_requirements')
+            print(f"Name: {name}")
+            print(f"Binomial Name: {binomial_name}")
+            print(f"Description: {description}")
+            print(f"Sun Requirements: {sun_requirements}")
+        else:
+            print("No matching crops found.")
+    else:
+        print(f"Request failed with status code: {response.status_code}")
+
+def get_plants_by_sunlight(sunlight_requirement):
+    # Funktion, um Pflanzen basierend auf Sonnenlichtanforderungen zu finden
+    base_url = "https://openfarm.cc/api/v1/crops"
+    print(f"Requesting URL: {base_url}")
+    response = requests.get(base_url)
+
+    if response.status_code == 200:
+        data = response.json()
+        matching_plants = []
+
+        for crop in data['data']:
+            attributes = crop['attributes']
+            sun_requirements = attributes.get('sun_requirements', "").lower()
+            
+            # Filterung nach Sonnenlichtanforderungen
+            if sunlight_requirement.lower() in sun_requirements:
+                plant_info = {
+                    'name': attributes.get('name'),
+                    'binomial_name': attributes.get('binomial_name'),
+                    'sun_requirements': sun_requirements
+                }
+                matching_plants.append(plant_info)
+        
+        # Ausgabe der gefilterten Pflanzen
+        if matching_plants:
+            print(f"Pflanzen, die {sunlight_requirement} Sonnenlicht benötigen:")
+            for plant in matching_plants:
+                print(f"- Name: {plant['name']}, Binomial Name: {plant['binomial_name']}, Sun Requirements: {plant['sun_requirements']}")
+        else:
+            print(f"Keine Pflanzen gefunden, die {sunlight_requirement} Sonnenlicht benötigen.")
+    else:
+        print(f"Request failed with status code: {response.status_code}")
+
+# Beispielaufrufe der Funktionen
+get_plants_by_sunlight("viel")
+get_plants_by_sunlight("wenig")
+get_plants_by_sunlight("kein")
 
