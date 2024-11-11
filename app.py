@@ -82,7 +82,7 @@ def search_bar():
    """Diese Funktion erlaubt eine gezielte Suchanfrage für eine Pflanze."""
    
    #import requests is needed here
-   st.title("Find vegetable Informations here")
+   st.title("Find vegetable informations here")
    st.write("Search for a specific vegetable or herb and find out more about the plant details.")
 
    #Input field for vegetable/herb name
