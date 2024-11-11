@@ -104,8 +104,8 @@ def main():
         st.session_state['section'] = 'Home'
     if st.sidebar.button("Plant Recommendations"):   
         st.session_state['section'] = 'Plant Recommendations'
-    if st.sidebar.button('I know what I am searching for...'):
-        st.session_state['section'] = 'I know what I am searching for...'
+    if st.sidebar.button('I know what I want'):
+        st.session_state['section'] = 'I know what I want'
     if st.sidebar.button('Marketplace'):
         st.session_state['section'] = 'Marketplace'
 
@@ -114,8 +114,8 @@ def main():
         Introduction_WebApp()
     elif st.session_state['section'] == 'Plant Recommendations':
         st.title("Plant Recommendations based on your Location")
-    elif st.session_state['section'] == 'I know what I am searching for...':
-        st.title("I know what I am searching for...")
+    elif st.session_state['section'] == 'I know what I want':
+        st.title("I know what I want")
     elif st.session_state['section'] == 'Marketplace':
        st.title("Marketplace")
 
