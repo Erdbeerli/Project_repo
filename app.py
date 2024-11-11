@@ -42,7 +42,7 @@ def Introduction_WebApp():
    # """Beschreibung was unter I know what I want angezeigt wird"""
    st.write("If you already know which plant you want to plant, you can search for the corresponding plant in the search bar under the 'I know what I want' tab.")
 
-   st.subheader("Limitations")
+   st.subheader("Origin and Limitations of this WebApp")
    st.write("Our limitations relate to our API. Our selected API is not fully completed for every plant. It is therefore possible that our plant recommendation based on the input of the various criteria does not match your input exactly. However, the next best possible result will be displayed.")
    
     #Searchbar
