@@ -23,7 +23,7 @@ def Introduction_WebApp():
      
    #Buttons
    st.subheader("Our goal")
-   st.write("Our Gardening App tries to help students life a healthier an happier life...")
+   st.write("With our Gardening App we try to help students life a healthier an happier life...")
    # """spaces between lines
    st.write("In this way, we try to motivate you to lead a healthier life and contribute to urban gardening. Click on the following button to find three reasons why this gardening app could be useful for you.")
    if st.button("Three reasons why you should grow your own vegetables"):
