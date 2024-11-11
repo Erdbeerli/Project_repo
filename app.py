@@ -74,13 +74,6 @@ def Introduction_WebApp():
    defaults = None
    selection = 1
    selected_option = st.multiselect('How sunny is the place for your plant?', options , default=defaults, max_selections=selection)
-   
-
-   #Text von Medea
-   st.write("""Welcome to the gardening app for students and plant-friends!
-   Peterli facilitates growing your own vegetables and herbs: 
-   Based on your available space, your water availability and other preferences
-   you will receive personalized plant recommendations and instructions:)""")
 
 
 #PLANT RECOMMENDATION
