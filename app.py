@@ -86,7 +86,7 @@ def search_bar():
    st.write("Search for a specific vegetable or herb and find out more about the plant details.")
 
    #Input field for vegetable/herb name
-   plant_name = st.text_input("Enter vegetable or herb name:", "e.g. parsley")
+   plant_name = st.text_input("Enter vegetable or herb name:", "e.g. tomato")
 
    #Button to start the API contact
    if st.button("Search"):
