@@ -82,11 +82,11 @@ def search_bar():
    """Diese Funktion erlaubt eine gezielte Suchanfrage für eine Pflanze."""
    
    #import requests is needed here
-   st.title("🔎Find vegetable informations here")
+   st.title("Find vegetable informations here")
    st.write("Search for a specific vegetable or herb and find out more about the plant details.")
 
    #Input field for vegetable/herb name
-   plant_name = st.text_input("Enter vegetable or herb name:", "e.g. tomato")
+   plant_name = st.text_input("Enter vegetable or herb name:", "e.g. tomato 🍅")
 
    #Button to start the API contact
    if st.button("Search"):
