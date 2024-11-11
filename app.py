@@ -42,7 +42,21 @@ def Introduction_WebApp():
    # """Beschreibung was unter I know what I want angezeigt wird"""
    st.write("If you already know which plant you want to plant, you can search for the corresponding plant in the search bar under the 'I know what I want' tab.")
 
-   st.subheader("Origin and Limitations of this WebApp")
+   st.subheader("Who We Are") 
+   #Text überarbeitet mit ChatGPT
+   st.write("""We are a team of five bachelor`s students at the University of St. Gallen, united
+   by a shared passion for business administration and a drive to make impact. Since september, we have been 
+   enrolled in the course "Fundamentals and Methods of Computer Science", which inspired us to dive into 
+   practical programming and create this WebApp as part of our learning journey.""")
+   st.write("""Our goal is to support other fellow students to lead healthier and happier lives
+   with our WebApp. Although we are not computer scientists (or magicians!) 
+   we are dedicated to bringing our vision to life as effectively as possible.
+   That said, our project does have some limitations, and we are always open to feedback.""")
+   st.write("""Let us know if you have any suggestions for improvement - we`d love to hear from you!""")
+   #should we add a contact here??? 
+
+   
+   st.subheader("Limitations")
    st.write("Our limitations relate to our API. Our selected API is not fully completed for every plant. It is therefore possible that our plant recommendation based on the input of the various criteria does not match your input exactly. However, the next best possible result will be displayed.")
    
     #Searchbar
