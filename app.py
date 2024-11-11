@@ -1,6 +1,7 @@
 # Required Libraries
 import streamlit as st
 import pandas as pd
+import requests #wichtig für Funktion: search_bar 
 
 #Tab Title (Titel der Registerkarte)
 st.set_page_config(page_title="Gardening App for Students", page_icon=":seedling:")
@@ -63,8 +64,6 @@ def Introduction_WebApp():
    It is therefore possible that our plant recommendation based on the input of the various criteria does
    not match your input exactly. However, the next best possible result will be displayed.""")
    
-    #Searchbar
-   search_term = st.text_input('Search for plant')
 
     #Slider
    st.slider(label="How much space do you have for the plant to spread? Please indicate in cm.", min_value=0, max_value=100)
@@ -78,10 +77,58 @@ def Introduction_WebApp():
 
 #PLANT RECOMMENDATION
 
-
 #I KNOW WHAT I WANT: Search bar
 def search_bar():
-   """Diese Funktion erlaubt eine gezielte Suchanfrage für eine Pflanze"""
+   """Diese Funktion erlaubt eine gezielte Suchanfrage für eine Pflanze."""
+   
+   #import requests is needed here
+   st.title("Find your vegetable Informations here")
+   st.write("Search for a specific vegetable or herb and find out more about the plant details.")
+
+   #Input field for vegetable/herb name
+   plant_name = st.text_input("Enter vegetable or herb name:", "e.g. parsley")
+
+   #Button to start the API contact
+   if st.button("Search"):
+       # Base URL for OpenFarm API (supported by ChatGPT)
+       base_url = "https://openfarm.cc/api/v1/crops"
+       
+       #Send a GET request to the API with the search term (supported by ChatGPT)
+       response = requests.get(f"{base_url}?filter={plant_name}")
+       
+       # Check if the request was successful (supported by ChatGPT)
+       if response.status_code == 200:
+            data = response.json()
+        
+            # Check if any data is returned (supported by ChatGPT)
+            if 'data' in data and data['data']:
+            # Extract details of the first matching plant
+                plant = data['data'][0]
+                attributes = plant['attributes']
+
+                #Display plant details (supported by ChatGPT)
+                st.subheader("Plant Details")
+                st.write(f"**Name:** {attributes.get('name')}")
+                st.write(f"**Binomial Name:** {attributes.get('binomial_name')}")
+                st.write(f"**Description:** {attributes.get('description')}")
+                st.write(f"**Sun Requirements:** {attributes.get('sun_requirements')}")
+                st.write(f"**Sowing Method:** {attributes.get('sowing_method')}")
+                st.write(f"**Spread:** {attributes.get('spread')}")
+                st.write(f"**Row Spacing:** {attributes.get('row_spacing')}")
+                st.write(f"**Height:** {attributes.get('height')}")
+                st.write(f"**Tags:** {attributes.get('tags_array')}")
+
+                #i think we should delete companion link because it doesn`t work and add picture or sth. instead???
+                # Companion link if available
+                companions_link = plant['relationships']['companions']['links'].get('related')
+                if companions_link:
+                    st.write(f"[Companion Plants Link]({companions_link})")
+
+            else:
+                st.write("No matching plants found.")
+                #could we add here something to get an output anyway? ChatGPT, Wikipedia,...???
+       else:
+           st.write(f"Request failed with status code: {response.status_code}")
    
 
 
@@ -121,7 +168,7 @@ def main():
         st.title("Plant Recommendations based on your Location")
          
     elif st.session_state['section'] == 'I know what I want':
-        st.title("I know what I want")
+        search_bar()
     elif st.session_state['section'] == 'Marketplace':
        st.title("Marketplace")
 
