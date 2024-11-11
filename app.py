@@ -78,7 +78,12 @@ def Introduction_WebApp():
 
 #PLANT RECOMMENDATION
 
-#DATA ANALYSIS
+
+#I KNOW WHAT I WANT: Search bar
+def search_bar():
+   """Diese Funktion erlaubt eine gezielte Suchanfrage für eine Pflanze"""
+   
+
 
 #MARKETPLACE
 
@@ -114,6 +119,7 @@ def main():
         Introduction_WebApp()
     elif st.session_state['section'] == 'Plant Recommendations':
         st.title("Plant Recommendations based on your Location")
+         
     elif st.session_state['section'] == 'I know what I want':
         st.title("I know what I want")
     elif st.session_state['section'] == 'Marketplace':
