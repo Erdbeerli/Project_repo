@@ -116,6 +116,7 @@ def search_bar():
                 st.write(f"**Spread:** {attributes.get('spread')}")
                 st.write(f"**Row Spacing:** {attributes.get('row_spacing')}")
                 st.write(f"**Height:** {attributes.get('height')}")
+                st.write(f"**Growing Degree Days:** {attributes.get('growing_degree_days')}")
                 st.write(f"**Tags:** {attributes.get('tags_array')}")
 
                 #i think we should delete companion link because it doesn`t work and add picture or sth. instead???
