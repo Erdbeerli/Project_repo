@@ -26,10 +26,11 @@ def filter_plants_by_sunlight():
         matching_plants = []
 
         # Verify if there is any data in the response
-        if 'data' in data and data['data']:
-            # Loop through each plant to filter by sun requirement
-            for plant in data['data']:
-                attributes = plant['attributes']
+                if 'data' in data and isinstance(data['data'], list):
+                # Loop through each plant to filter by sun requirement
+                for plant in data['data']:
+                attributes = plant.get('attributes', {})
+
                 
                 # Retrieve the sun requirement and check if it matches the selected option
                 plant_sun_req = attributes.get('sun_requirements', '').lower()
