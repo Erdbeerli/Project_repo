@@ -49,7 +49,7 @@ def filter_plants_by_gdd():
                 attributes = plant['attributes']
                 st.write(f"Plant: {attributes.get('name', 'Unknown')}")
         else:
-            st.write("No plants found with the selected GDD. Please try a different option.")
+            st.write("No plants found with the selected growing days. Please try a different option.")
     else:
         st.write("There was a big error")            
 
