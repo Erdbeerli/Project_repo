@@ -75,8 +75,6 @@ def Introduction_WebApp():
    selected_option = st.multiselect('How sunny is the place for your plant?', options , default=defaults, max_selections=selection)
 
 
-#PLANT RECOMMENDATION
-
 #I KNOW WHAT I WANT: Search bar
 def search_bar():
    """Diese Funktion erlaubt eine gezielte Suchanfrage für eine Pflanze."""
@@ -130,7 +128,9 @@ def search_bar():
                 #could we add here something to get an output anyway? ChatGPT, Wikipedia,...???
        else:
            st.write(f"Request failed with status code: {response.status_code}")
-   
+
+
+#PLANT RECOMMENDATION: Filter Function
 def filter_function():
        # Set up the Streamlit interface
     st.title("Crop Finder")
@@ -138,6 +138,7 @@ def filter_function():
 
     # Input field for crop name
     crop_name = st.text_input("Enter Crop Name", "maybe parsley?")
+   # here we could also write down important vegetables instead? 
 
     # All the filters for sunlight, growing days, row spacing and spread
 
