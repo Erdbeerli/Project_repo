@@ -144,7 +144,7 @@ def filter_function():
     #SUNLIGHT
     # Dropdown for selecting sunlight requirement filter
     sun_requirement = st.selectbox(
-        "Select Your Available Sunlight Requirement",
+        "How sunny is your place?",
         ("Any", "Full Sun", "Partial Sun", "Shade")
     )
 
@@ -156,12 +156,12 @@ def filter_function():
         'Not much': int(90)
     }
     # Select the spacing availability and convert the selected value to an integer
-    spacing_avail = st.selectbox('How much space do you have', list(spacing_list.keys()))
+    spacing_avail = st.selectbox('How much space do you have?', list(spacing_list.keys()))
     spacing_value = spacing_list[spacing_avail]  # Convert the selected spacing to an integer value
 
     #GROWING DEGREE DAYS (GDD)
     time_list = {
-        'A lot': int(2000),
+        'I have time': int(2000),
         'One or Two years': int(500),
         'Less than a year': int(200)
     }
@@ -215,14 +215,10 @@ def filter_function():
                                 st.write(f"**Sowing Method:** {attributes.get('sowing_method')}")
                                 st.write(f"**Spread:** {attributes.get('spread')}")
                                 st.write(f"**Row Spacing:** {attributes.get('row_spacing')}")
+                                st.write(f"**Growing Degree Days:** {attributes.get('growing_degree_days')}")
                                 st.write(f"**Height:** {attributes.get('height')}")
                                 st.write(f"**Tags:** {attributes.get('tags_array')}")
                                 
-                                # Companion link if available
-                                companions_link = crop['relationships']['companions']['links'].get('related')
-                                if companions_link:
-                                    st.write(f"[Companion Plants Link]({companions_link})")
-
                                 found_crops = True
 
                 if not found_crops:
@@ -276,16 +272,3 @@ def main():
 
 #Aufruf der Main Funktion
 main()
-
-
-
-    
-
-
-
-
-
-
-    
-
-  
