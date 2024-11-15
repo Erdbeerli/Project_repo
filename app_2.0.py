@@ -260,6 +260,7 @@ def main():
         search_bar()
     elif st.session_state['section'] == 'Marketplace':
        st.title("Marketplace")
+       st.write("Coming Soon 🥦🍅🥕")
 
 #Aufruf der Main Funktion
 main()
