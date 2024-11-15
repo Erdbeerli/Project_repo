@@ -259,8 +259,8 @@ def main():
     elif st.session_state['section'] == 'I know what I want':
         search_bar()
     elif st.session_state['section'] == 'Marketplace':
-       st.title("Marketplace")
-       st.write("Coming Soon 🥦🍅🥕")
+       st.title("Coming Soon 🥦🍅🥕")
+   
 
 #Aufruf der Main Funktion
 main()
