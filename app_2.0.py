@@ -63,16 +63,6 @@ def Introduction_WebApp():
    st.write("""Our limitations relate to our API. Our selected API is not fully completed for every plant. 
    It is therefore possible that our plant recommendation based on the input of the various criteria does
    not match your input exactly. However, the next best possible result will be displayed.""")
-   
-
-    #Slider
-   st.slider(label="How much space do you have for the plant to spread? Please indicate in cm.", min_value=0, max_value=100)
-
-   #Auswahlfelder
-   options = ['Full Sun ☀️', 'Partial Sun 🌤️', 'No Sun, Shadow ☁️']
-   defaults = None
-   selection = 1
-   selected_option = st.multiselect('How sunny is the place for your plant?', options , default=defaults, max_selections=selection)
 
 
 #I KNOW WHAT I WANT: Search bar
