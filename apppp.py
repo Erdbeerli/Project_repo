@@ -1,3 +1,9 @@
+#habe in diesem Dokument nochmals versucht an der Filterfunktion zu arbeiten...
+#habe es nicht geschafft nach den tags zu filtern
+#dieses Dokument braucht sehr lange für die Ausgabe und funktioniert nicht richtig
+#wer wird weiter an der Filter-Funktion arbeiten? 
+
+
 import streamlit as st
 import requests
 
