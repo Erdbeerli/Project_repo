@@ -30,6 +30,8 @@ def collect_feedback():
 #HOME: Title & Intro
 def Introduction_WebApp():
    """Diese Funktion beinhaltet alles, was auf dem Abschnitt HOME angezeigt werden soll"""
+
+   st.write("🥦🥕🥬🥒🌱🍅🧅🧄🌶️🌽🍆🫑🥑🎃🫛🫘🍠🫚")
    
    st.title("🌱 Gardening App for Students")
    
