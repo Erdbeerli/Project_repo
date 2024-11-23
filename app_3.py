@@ -35,7 +35,7 @@ def Introduction_WebApp():
    
    st.title("🌱 Gardening App for Students")
 
-   st.write("🥦🥕🥬🥒🌱🍅🧅🧄🌶️🌽🍆🫑🥑🎃🫛🫘🍠🫚🥦🥕🥬🥒🌱🍅🧅🧄🌶️🌽🍆🫑🥑🎃🫛🫘🍠🫚")
+   st.write("🥦🥕🥬🥒🌱🍅🧅🧄🌶️🌽🍆🫑🥑🫛🫘🍠🫚🥦🥕🥬🥒🌱🍅🧅🧄🌶️🌽🍆🫑🥑🫛🫘🍠")
    
    # """ is needed to make spaces between the lines
    st.write("""Welcome to our Gardening App for Students and Plant Lovers.
