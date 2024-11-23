@@ -13,7 +13,7 @@ def collect_feedback():
     """Collect user feedback from the web app."""
     
     # Create a text area for users to enter their feedback
-    feedback = st.text_area("Let us know if you have any suggestions for improvement:", height=20)
+    feedback = st.text_area("Let us know if you have any suggestions for improvement:")
 
 
     # If the user clicks the submit button
