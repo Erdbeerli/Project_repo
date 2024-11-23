@@ -34,6 +34,8 @@ def Introduction_WebApp():
    
    
    st.title("🌱 Gardening App for Students")
+
+   st.write("🥦🥕🥬🥒🌱🍅🧅🧄🌶️🌽🍆🫑🥑🫛🫘🍠🍅🥦🥕🥬🥒🌱🍅🧅🧄🌶️🌽🍆🫑🥑🫛🫘🍠")
    
    # """ is needed to make spaces between the lines
    st.write("""Welcome to our Gardening App for Students and Plant Lovers.
@@ -42,7 +44,7 @@ def Introduction_WebApp():
    at the planting site and other criteria, we will recommend personalized plants
    for you to plant!""")
 
-   st.write("🥦🥕🥬🥒🌱🍅🧅🧄🌶️🌽🍆🫑🥑🫛🫘🍠🍅🥦🥕🥬🥒🌱🍅🧅🧄🌶️🌽🍆🫑🥑🫛🫘🍠")
+   st.write("---")
     
    #Buttons
    st.subheader("Our goal 🎯")
