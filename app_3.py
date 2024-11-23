@@ -44,7 +44,6 @@ def Introduction_WebApp():
 
    st.write("🥦🥕🥬🥒🌱🍅🧅🧄🌶️🌽🍆🫑🥑🫛🫘🍠🍅🥦🥕🥬🥒🌱🍅🧅🧄🌶️🌽🍆🫑🥑🫛🫘🍠")
     
-   st.write("---") 
    #Buttons
    st.subheader("Our goal 🎯")
    st.write("With our Gardening App we try to help students live a healthier an happier life...")
