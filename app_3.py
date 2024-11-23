@@ -31,9 +31,11 @@ def collect_feedback():
 def Introduction_WebApp():
    """Diese Funktion beinhaltet alles, was auf dem Abschnitt HOME angezeigt werden soll"""
 
-   st.write("🥦🥕🥬🥒🌱🍅🧅🧄🌶️🌽🍆🫑🥑🎃🫛🫘🍠🫚")
+   
    
    st.title("🌱 Gardening App for Students")
+
+   st.write("🥦🥕🥬🥒🌱🍅🧅🧄🌶️🌽🍆🫑🥑🎃🫛🫘🍠🫚🥦🥕🥬🥒🌱🍅🧅🧄🌶️🌽🍆🫑🥑🎃🫛🫘🍠🫚")
    
    # """ is needed to make spaces between the lines
    st.write("""Welcome to our Gardening App for Students and Plant Lovers.
