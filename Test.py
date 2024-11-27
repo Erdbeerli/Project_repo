@@ -129,6 +129,8 @@ def search_bar():
                         plant = filtered_plants[0]  # Erste passende Pflanze
                         attributes = plant['attributes']
 
+                    
+
 
 
                         # Pflanzendetails anzeigen OHNE FORMATIERUNG
@@ -189,6 +191,12 @@ def search_bar():
                 st.write(f"Request failed with status code: {response.status_code}")
         except Exception as e:
             st.write(f"An error occurred: {e}")
+
+    name = attributes.get('name', 'unknown plant')
+    description = attributes.get('description', 'no description available.')
+
+    if st.button(f"💖 Like {name}", key=f"like_{name}"):
+        like_crop(name, description)
 
 def like_crop(name, description):
     """Fügt die Pflanze zu den gelikten Pflanzen hinzu."""
