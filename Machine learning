@@ -8,8 +8,6 @@ import requests
 import pandas as pd
 
 
-st.set_page_config(page_title="Photo-Based Plant Recommender", page_icon=":seedling:")
-
 def fetch_plant_data():
     """
     Fetch plant data from OpenFarm API.
