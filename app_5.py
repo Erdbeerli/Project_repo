@@ -2,7 +2,7 @@
 import streamlit as st
 import pandas as pd
 import requests #wichtig für Funktion: search_bar and filter_function 
-import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt #important for data visualization bars
 
 #Tab Title (Titel der Registerkarte)
 st.set_page_config(page_title="Gardening App for Students", page_icon=":seedling:")
