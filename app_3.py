@@ -195,8 +195,8 @@ def search_bar():
 def filter_function():
     st.title("Vegetable and Herb Finder")
     st.subheader("Get plant recommendations based on your location")
+    st.write("On this page you can use the information below to get an initial idea of possible plants to plant in your home. For more information, you can enter the relevant name in the search bar on the 'I know what I want' page.")
     st.write("Give us some information about your planned planting location and your patience ;)")
-
 
 # Vegetables: Potato, Lettuce, Tomato, Zucchini, Cucumber, Spinach, Radish, Kale, Broccoli, Cauliflower, Peas, Beans, Onion, Garlic, Leek, Swiss Chard, Beetroot, Pumpkin, Brussels Sprouts, Celery, Parsley, Dill, Basil, Cabbage, Sweet Corn, Turnip, Parsnip, Eggplant, Pepper
 # Herbs: Basil, Parsley, Thyme, Oregano, Rosemary, Chives, Sage, Mint, Cilantro, Dill, Fennel, Lavender, Tarragon, Lemon Balm, Marjoram, Chamomile, Bay Laurel, Sorrel, Lovage, Cress
