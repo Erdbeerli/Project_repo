@@ -43,7 +43,7 @@ def Introduction_WebApp():
    at the planting site and other criteria, we will recommend personalized plants
    for you to plant!""")
 
-   st.write("🥦🥕🥬🥒🌱🍅🧅🧄🌶️🌽🍆🫑🥑🫛🫘🍠🍅🥦🥕🥬🥒🌱🍅🧅🧄🌶️🌽🍆🫑🥑🫛🫘🍠")
+   st.write("🥦🥕🥬🥒🌱🍅🧅🧄🌶️🌽🍆🫑🥑🫛🫘🍠🍅🥦🥕🥬🥒🌱🍅🧅🧄🌶️🌽🍆🫑🥑🫛🫘")
    st.write("---")
     
    #Buttons
