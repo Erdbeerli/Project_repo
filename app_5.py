@@ -203,7 +203,7 @@ def filter_function_herb():
 # Herbs: Basil, Parsley, Thyme, Oregano, Rosemary, Chives, Sage, Mint, Cilantro, Dill, Fennel, Lavender, Tarragon, Lemon Balm, Marjoram, Chamomile, Bay Laurel, Sorrel, Lovage, Cress
 
     #crop_name = "Oregano", "Cress", "Mint", "Cilantro", "Parsley", "Thyme", "Rosemary", "Chives", "Sage", "Dill", "Fennel", "Lavender", "Tarragon", "Lemon Balm", "Marjoram", "Chamomile", "Bay Laurel", "Sorrel", "Lovage", "Onion", "Garlic", "Thai Basil", 
-    crop_name = "Sorrel, Parsley, Thyme, Italian Oregano, Basil, Cilantro, Sage, Chives, Fernleaf Dill, Chamomile, Bay Laurel, Tarragon, Cress, Lovage"
+    crop_name = "Cress, Sorrel, Parsley, Thyme, Italian Oregano, Basil, Cilantro, Sage, Chives, Fernleaf Dill, Chamomile, Bay Laurel, Tarragon, Cress, Lovage"
     sun_requirement = st.selectbox("☀️ How sunny is your place?", ("Any", "Full Sun", "Partial Sun"))
 
     
