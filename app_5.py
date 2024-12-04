@@ -250,10 +250,10 @@ def crop_matches_criteria(attributes, sun_requirement, spacing_value, gdd_avail_
         gdd_avail_value >= int(growing_deg_days)
     )
 
-# Move the display_bar_chart function outside of display_crop_details
+# Data Visualization, horizontal bar chart
 def display_bar_chart(attributes):
     # Default average spread for all plants
-    average_spread = 40 
+    average_spread = 35 
     # Actual spread for the plant (fetch from attributes)
     plant_spread = attributes.get('spread', average_spread)  # Default to average if not provided
 
@@ -355,10 +355,10 @@ def crop_matches_criteria(attributes, sun_requirement, spacing_value, gdd_avail_
         gdd_avail_value >= int(growing_deg_days)
     )
 
-# Move the display_bar_chart function outside of display_crop_details
+# Data Visualtization: horizontal bar chart
 def display_bar_chart(attributes):
     # Default average spread for all plants
-    average_spread = 40 
+    average_spread = 35
     # Actual spread for the plant (fetch from attributes)
     plant_spread = attributes.get('spread', average_spread)  # Default to average if not provided
 
