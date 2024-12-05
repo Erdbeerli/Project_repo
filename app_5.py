@@ -250,29 +250,32 @@ def crop_matches_criteria(attributes, sun_requirement, spacing_value, gdd_avail_
         gdd_avail_value >= int(growing_deg_days)
     )
 
-# Data Visualization, horizontal bar chart
-def display_bar_chart(attributes):
+# Data Visualization, horizontal bar chart for herbs, with help from chat gpt
+def display_bar_chart_herb(attributes):
     # Default average spread for all plants
-    average_spread = 35 
+    average_spread_herb = 35
     # Actual spread for the plant (fetch from attributes)
-    plant_spread = attributes.get('spread', average_spread)  # Default to average if not provided
+    plant_spread_herb = attributes.get('spread', average_spread_herb)  # Default to average if not provided
+
+    #Definition plant_name for the label
+    plant_name_herb = attributes.get('name')
 
     # Horizontal bar chart
     plt.figure(figsize=(6, 1))
     
     # Modify y-values to increase space between bars
     y_values = [1, 1.4]  # Further spacing between bars
-    x_values = [average_spread, plant_spread]
+    x_values = [average_spread_herb, plant_spread_herb]
     
     # Adjust bar height for thinner bars
-    plt.barh(y_values, x_values, color=['grey', 'green'], height=0.3, tick_label=["Average", "Plant"])
+    plt.barh(y_values, x_values, color=['grey', 'green'], height=0.3, tick_label=["Average", plant_name_herb])
     
     # Adjust font size for title and labels
     plt.xlabel("Spread (cm)", fontsize=7)
     plt.title(f"Spread Comparison for {attributes.get('name', 'Unknown Plant')}", fontsize=9)
     
     # Adjust y-ticks and make the text smaller
-    plt.yticks([1, 1.4], labels=["Average", "Plant"], fontsize=7)
+    plt.yticks([1, 1.4], labels=["Average", plant_name_herb], fontsize=7)
 
     plt.tick_params(axis='x', labelsize=6)  # Change font size of the x-axis numbers
     
@@ -292,7 +295,7 @@ def display_crop_details(attributes):
     st.write(f"**Tags:** {attributes.get('tags_array')}")
 
     # Call the bar chart display function
-    display_bar_chart(attributes)
+    display_bar_chart_herb(attributes)
 
     st.write("---")
 
@@ -355,29 +358,33 @@ def crop_matches_criteria(attributes, sun_requirement, spacing_value, gdd_avail_
         gdd_avail_value >= int(growing_deg_days)
     )
 
-# Data Visualtization: horizontal bar chart
-def display_bar_chart(attributes):
+
+# Data Visualtization: horizontal bar chart for vegetables, with help from chat gpt
+def display_bar_chart_vegetable(attributes):
     # Default average spread for all plants
-    average_spread = 35
+    average_spread_vegetable = 35
     # Actual spread for the plant (fetch from attributes)
-    plant_spread = attributes.get('spread', average_spread)  # Default to average if not provided
+    plant_spread_vegetable = attributes.get('spread', average_spread_vegetable)  # Default to average if not provided
+
+    #Definition plant_name for the label
+    plant_name_vegetable = attributes.get('name')
 
     # Horizontal bar chart
     plt.figure(figsize=(6, 1))
     
     # Modify y-values to increase space between bars
     y_values = [1, 1.4]  # Further spacing between bars
-    x_values = [average_spread, plant_spread]
+    x_values = [average_spread_vegetable, plant_spread_vegetable]
     
     # Adjust bar height for thinner bars
-    plt.barh(y_values, x_values, color=['grey', 'green'], height=0.3, tick_label=["Average", "Plant"])
+    plt.barh(y_values, x_values, color=['grey', 'green'], height=0.3, tick_label=["Average", plant_name_vegetable])
     
     # Adjust font size for title and labels
     plt.xlabel("Spread (cm)", fontsize=7)
     plt.title(f"Spread Comparison for {attributes.get('name', 'Unknown Plant')}", fontsize=9)
     
     # Adjust y-ticks and make the text smaller
-    plt.yticks([1, 1.4], labels=["Average", "Plant"], fontsize=7)
+    plt.yticks([1, 1.4], labels=["Average", plant_name_vegetable], fontsize=7)
 
     plt.tick_params(axis='x', labelsize=6)  # Change font size of the x-axis numbers
     
@@ -398,7 +405,7 @@ def display_crop_details(attributes):
     st.write(f"**Tags:** {attributes.get('tags_array')}")
 
     # Call the bar chart display function
-    display_bar_chart(attributes)
+    display_bar_chart_vegetable(attributes)
 
     st.write("---")
 
