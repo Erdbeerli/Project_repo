@@ -87,12 +87,12 @@ def Introduction_WebApp():
 
    st.subheader("Who We Are 👩🏼‍💻🧑🏻‍💻👩🏽‍💻🧑🏼‍💻👩🏻‍💻") 
    # the following text was revised with: ChatGPT
-   st.write("""We are a team of five bachelor`s students at the University of St. Gallen, united
+   st.write("""We are a team of five bachelor's students at the University of St. Gallen, united
    by a shared passion for business administration and a drive to make an impact. Since september, we have been 
    enrolled in the course "Fundamentals and Methods of Computer Science", which inspired us to dive into 
    practical programming and create this WebApp as part of our learning journey.""")
    st.write("""Our goal is to support other fellow students to lead healthier and happier lives
-   with our gardening web app. Although we are not computer scientists (or magicians ;)carr) 
+   with our gardening web app. Although we are not computer scientists (or magicians ;)) 
    we are dedicated to bringing our vision to life as effectively as possible.
    That said, our project does have some limitations, and we are always open to feedback.""")
     
