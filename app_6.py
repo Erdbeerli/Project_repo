@@ -12,7 +12,6 @@ st.set_page_config(page_title="Gardening Web App for Students")
 
 #Feedback-Form on the HOME tab (supported by: ChatGPT)
 def collect_feedback():
-    
     """
     This function collects user feedback from the user on streamlit in a simple form.
     The shared feedback will be locally stored in a text file on the computer where the
@@ -37,7 +36,6 @@ def collect_feedback():
 
 #HOME: Title & Intro
 def Introduction_WebApp():
-   
    """
    This function contains everything that is shown on the page HOME. 
 
