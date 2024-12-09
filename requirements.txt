@@ -2,3 +2,4 @@ streamlit
 pandas
 matplot
 requests
+scikit-learn
