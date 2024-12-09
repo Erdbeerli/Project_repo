@@ -44,7 +44,7 @@ def Introduction_WebApp():
    """
 
    st.title("Gardening Web App for Students 🌱")
-   st.write("""**Welcome to our Gardening Web App for Students and Plant Lovers!**""")
+   st.write(**Welcome to our Gardening Web App for Students and Plant Lovers!**)
    st.write("""With this app, we want to encourage students to grow their
    own vegetables and herbs. Based on your available space, the amount of sunlight
    at the planting site and your patience, you will receive personalized recommendations 
