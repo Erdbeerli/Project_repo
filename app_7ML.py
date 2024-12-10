@@ -242,15 +242,22 @@ def filter_function_herb():
 
     # Options for selection or input parameters
   
+    #selectbox to indicate how sunny the place is
     sun_requirement = st.selectbox("☀️ How sunny is your place?", ("Any", "Full Sun", "Partial Sun"))
     
+    #this dictionary is used to link user-friendly categories with concrete distance specifications and quickly access the numeric values that correspond to each description
     spacing_list = {'Any': 200, 'A lot (between 60 and 200cm)': 200, 'Some space (max. 60cm)': 60, 'A little bit (max. 30cm)': 30}
+    #selectbox to indicate how much space is available. The selection consists of the dictionary 'spacing_list'.
     spacing_avail = st.selectbox('📐 How much space do you have?', list(spacing_list.keys()))
+    #this line translates the entered value into an exact numerical value and is assigned to the 'spacing_value' variable
     spacing_value = spacing_list[spacing_avail]
     # small spread 0-30cm / medium spread 31-60cm / large spread 60cm and more 
 
+    #this dictionary is used to link user-friendly categories with concrete time specifications and quickly access the numeric values that correspond to each description
     time_list = {'Any': 300, 'I have time (up to a year)': 300, 'About a semester (4 months)': 120, 'Not much (2 months)': 60}
+    #selectbox to indicate how long you want to wait. The selection consists of the dictionary 'time_list'.
     gdd_avail = st.selectbox('⏳ How long do you want to wait?', list(time_list.keys()))
+    #this line translates the entered value into an exact numerical value and is assigned to the 'ggd_avail_value' variable
     gdd_avail_value = time_list[gdd_avail]
     # short harvest time 0-60days / medium 61-120 days / long 120+ days
 
@@ -383,16 +390,23 @@ def filter_function_vegetable():
 
     # Options for selection or input parameters
 
+    #selectbox to indicate how sunny the place is
     sun_requirement = st.selectbox("☀️ How sunny is your place?", ("Any", "Full Sun", "Partial Sun"))
 
+    #this dictionary is used to link user-friendly categories with concrete distance specifications and quickly access the numeric values that correspond to each description
     spacing_list = {'Any': 200, 'A lot (between 60 and 200cm)': 200, 'Some space (max. 60cm)': 60, 'A little bit (max. 30cm)': 30}
+    #selectbox to indicate how much space is available. The selection consists of the dictionary 'spacing_list'.
     spacing_avail = st.selectbox('📐 How much space do you have?', list(spacing_list.keys()))
+    #this line translates the entered value into an exact numerical value and is assigned to the 'spacing_value' variable
     spacing_value = spacing_list[spacing_avail]
     # small spread 0-30cm / medium spread 31-60cm / large spread 60cm and more 
 
    
+    #this dictionary is used to link user-friendly categories with concrete time specifications and quickly access the numeric values that correspond to each description
     time_list = {'Any': 300, 'I have time (up to a year)': 300, 'About a semester (4 months)': 120, 'Not much (2 months)': 60}
+    #selectbox to indicate how long you want to wait. The selection consists of the dictionary 'time_list'.
     gdd_avail = st.selectbox('⏳ How long do you want to wait?', list(time_list.keys()))
+    #this line translates the entered value into an exact numerical value and is assigned to the 'ggd_avail_value' variable
     gdd_avail_value = time_list[gdd_avail]
     # short harvest time 0-60days / medium 61-120 days / long 120+ days
 
