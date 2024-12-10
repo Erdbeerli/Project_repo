@@ -751,7 +751,7 @@ def main():
     elif st.session_state['section'] == 'Herb Recommendations':
         filter_function_herb() 
     elif st.session_state['section'] == 'Machine Learning':
-        st.title("Coming soon... 🥦🍅🥕")
+        st.title("First Fetch the Data, Then Upload your Image")
     
         if st.button("Fetch All Plant Data"):
             st.write("Fetching plant data... Please wait!")
