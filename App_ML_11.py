@@ -190,7 +190,6 @@ def search_bar():
 
                         st.markdown(details_table, unsafe_allow_html=True)
 
-                        st.write("")
 
                         # show a picture if available
                         image_url = attributes.get('main_image_path')
@@ -579,8 +578,7 @@ def debug_dataframe(df):
         missing_columns = [col for col in ["plant_name", "sun_requirements", "spread"] if col not in df.columns]
         if missing_columns:
             st.error(f"Missing required columns in the DataFrame: {missing_columns}")
-        else:
-            st.success("")
+    
 
 
 # Initialize ML Model
@@ -595,13 +593,12 @@ def initialize_ml_model(df):
         df = df[df["sun_requirements"] != "unknown"]
         df["spread"] = pd.to_numeric(df["spread"], errors="coerce")  # Convert spread to numeric
         df = df.dropna(subset=["spread"])  # Drop rows with NaN values in spread
-        st.caption(f"Filtered DataFrame shape: {df.shape}")
+
 
         # Encode sunlight requirements
         le_sun = LabelEncoder()
         df["sun_encoded"] = le_sun.fit_transform(df["sun_requirements"])
-        st.caption("Label encoding for sunlight requirements applied.")
-        st.caption(df[["sun_requirements", "sun_encoded"]].drop_duplicates())  # Show encoding
+    
 
         # Prepare features and labels
         X = df[["sun_encoded", "spread"]]
@@ -648,7 +645,7 @@ def analyze_image(image):
         
         space = 150 if width > 1000 else (50 if width > 500 else 20)
         
-        st.write(f"Image analysis results: brightness={brightness}, light_condition={light_condition}, space={space}")
+       
         return light_condition, space
     except Exception as e:
         st.error(f"Error analyzing image: {e}")
@@ -664,8 +661,7 @@ def process_light_condition(light_condition, le_sun, space, model):
     
     # Mapping anwenden
     mapped_light_condition = light_mapping.get(light_condition.lower())
-    st.write(f"Mapped Light Condition: {mapped_light_condition}")
-    st.write(f"Available classes in LabelEncoder: {le_sun.classes_}")
+
     
     if mapped_light_condition in le_sun.classes_:
         light_encoded = le_sun.transform([mapped_light_condition])[0]
