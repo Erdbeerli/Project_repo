@@ -236,7 +236,7 @@ def filter_function_herb():
     # According to this API Documentation "https://github.com/openfarmcc/OpenFarm/blob/mainline/docs/api_docs.md" Crops need a filter to return something.
     # It was unfortunately not possible to query for the tag_array in the OpenFarm API. Therefore we needed to make a preselection based on the most common herbs in Switzerland.
     # Common herbs in Switzerland: Basil, Parsley, Thyme, Oregano, Rosemary, Chives, Sage, Mint, Cilantro, Dill, Lavender, Tarragon, Lemon Balm, Marjoram, Chamomile, Bay Laurel, Sorrel, Lovage, Cress
-    #crop_name = "Sorrel, Parsley, Thyme, Italian Oregano, Basil, Cilantro, Sage, Chives, Fernleaf Dill, Chamomile, Bay Laurel, Tarragon, Cress, Lovage, Peppermint"
+    crop_name = "Sorrel, Parsley, Thyme, Italian Oregano, Basil, Cilantro, Sage, Chives, Fernleaf Dill, Chamomile, Bay Laurel, Tarragon, Cress, Lovage, Peppermint"
     # However there were crops that did not work well with the others and where therefore left out. These are: "Rosemary", "Lavender", "Lemon Balm", "Marjoram"
 
     NEU
@@ -244,7 +244,7 @@ def filter_function_herb():
     # It was unfortunately not possible to query for the tag_array in the OpenFarm API. Therefore we needed to make a preselection based on the most common herbs in Switzerland.
     # Common herbs in Switzerland are mainly based on the seasonal calender from Swiss Farmers (source: https://www.swiss-farmers.ch/seasonal-calendar/) 
     # Basil, Chamomile, Chives, Cilantro, Cress, Dill, Fennel, Lemon Balm, Lovage, Marjoram, Oregano, Parsley, Peppermint, Rosemary, Saffron, Sage, Savory, Sorrel, Tarragon
-    crop_name = "Sorrel, Rumex acetosa, Parsley, Thyme, Italian Oregano, Basil, Cilantro, Sage, Chives, Fernleaf Dill, Chamomile, Tarragon, Cress,lepidium sativum, Lovage, Mentha spicata / Mentha viridis, Summer Savory, Rosmarinus officinalis, Saffron, Fennel"
+    #crop_name = "Sorrel, Rumex acetosa, Parsley, Thyme, Italian Oregano, Basil, Cilantro, Sage, Chives, Fernleaf Dill, Chamomile, Tarragon, Cress,lepidium sativum, Lovage, Mentha spicata / Mentha viridis, Summer Savory, Rosmarinus officinalis, Saffron, Fennel"
     # However there were crops that needed their binominal name too. In addition to that three crops did not work well with the others and where therefore left out. These are: "Rosemary", "Lemon Balm", "Marjoram"
 
     # Options for selection or input parameters
@@ -384,7 +384,7 @@ def filter_function_vegetable():
     # According to this API Documentation "https://github.com/openfarmcc/OpenFarm/blob/mainline/docs/api_docs.md" Crops need a filter to return something.
     # It was unfortunately not possible to query for the tag_array in the OpenFarm API. Therefore we needed to make a preselection based on the most common vegetables in Switzerland.
     # Common vegetables in switzerland: Potato, Lettuce, Tomato, Zucchini, Cucumber, Spinach, Radish, Kale, Broccoli, Cauliflower, Peas, Beans, Onion, Garlic, Leek, Swiss Chard, Beetroot, Pumpkin, Brussels Sprouts, Celery, Cabbage, Sweet Corn, Turnip, Parsnip, Eggplant, Pepper, Fennel
-    #crop_name = "Brassica oleracea, RedPepper, Onion", "Carrot", "Potato, Onion", "Icicle Radish", "Lettuce", "Tomato, Zucchini", "Zucchini", "Spinach", "Radish", "Kale", "Broccoli", "Cauliflower", "Peas", "Green Beans", "Leek", "Swiss Chard, Cabbage", "Beetroot", "Brussels Sprouts", "Celery", "Sweet Corn", "Turnip", "Parsnip", "Eggplant", "Cucumber", "Van Zerden Garlic", "Pepper", "Fennel"
+    crop_name = "Brassica oleracea, RedPepper, Onion", "Carrot", "Potato, Onion", "Icicle Radish", "Lettuce", "Tomato, Zucchini", "Zucchini", "Spinach", "Radish", "Kale", "Broccoli", "Cauliflower", "Peas", "Green Beans", "Leek", "Swiss Chard, Cabbage", "Beetroot", "Brussels Sprouts", "Celery", "Sweet Corn", "Turnip", "Parsnip", "Eggplant", "Cucumber", "Van Zerden Garlic", "Pepper", "Fennel"
     # However there were also crops that did not work well with the others and where therefore left out or had to be written twice.
 
     NEU 
@@ -392,7 +392,7 @@ def filter_function_vegetable():
     # It was unfortunately not possible to query for the tag_array in the OpenFarm API. Therefore we needed to make a preselection based on the most common vegetables in Switzerland.
     # Common vegetables in switzerland were selected based on the seasonal calender from Swiss Farmers (source: https://www.swiss-farmers.ch/seasonal-calendar/) 
     # Beetroot, Bell Pepper, Beans, Broccoli, Brussels Sprouts, Cabbage, Carrot, Cauliflower, Celeriac, Cucumber, Eggplant, Fennel, Garlic, Kale, Leek, Lettuce, Onion, Parsnip, Peas, Potato, Radicchio, Radish, Spinach, Squash, Sweet Corn, Swiss Chard, Tomato, Turnip, Zucchini
-    crop_name = "Brassica oleracea", "RedPepper", "Onion", "Carrot", "Potato", "Onion", "Icicle Radish", "Lettuce", "Tomato", "Zucchini", "Zucchini", "Spinach", "Kale", "Broccoli", "Cauliflower", "Peas", "Green Beans", "Leek", "Swiss Chard", "Cabbage", "Beetroot", "Brussels Sprouts", "Celery", "Sweet Corn", "Turnip", "Parsnip", "Eggplant", "Cucumber", "Van Zerden Garlic", "Pepper", "Fennel", "Eggplant", "Radicchio"
+    #crop_name = "Brassica oleracea", "RedPepper", "Onion", "Carrot", "Potato", "Onion", "Icicle Radish", "Lettuce", "Tomato", "Zucchini", "Zucchini", "Spinach", "Kale", "Broccoli", "Cauliflower", "Peas", "Green Beans", "Leek", "Swiss Chard", "Cabbage", "Beetroot", "Brussels Sprouts", "Celery", "Sweet Corn", "Turnip", "Parsnip", "Eggplant", "Cucumber", "Van Zerden Garlic", "Pepper", "Fennel", "Eggplant", "Radicchio"
     # However there were also crops that did not work well with the others and where therefore left out or had to be written twice.
 
     # Options for selection or input parameters
