@@ -232,13 +232,6 @@ def filter_function_herb():
     you can grow at home. For more detailed information, you can simply enter the plant name in the search bar on the '_I Know What I Want_' page.""")
     st.write("**Give us some information about your planned planting location and your patience ;)**")
 
-   
-    # According to this API Documentation "https://github.com/openfarmcc/OpenFarm/blob/mainline/docs/api_docs.md" Crops need a filter to return something.
-    # It was unfortunately not possible to query for the tag_array in the OpenFarm API. Therefore we needed to make a preselection based on the most common herbs in Switzerland.
-    # Common herbs in Switzerland: Basil, Parsley, Thyme, Oregano, Rosemary, Chives, Sage, Mint, Cilantro, Dill, Lavender, Tarragon, Lemon Balm, Marjoram, Chamomile, Bay Laurel, Sorrel, Lovage, Cress
-    # crop_name = "Sorrel, Parsley, Thyme, Italian Oregano, Basil, Cilantro, Sage, Chives, Fernleaf Dill, Chamomile, Bay Laurel, Tarragon, Cress, Lovage, Peppermint"
-    # However there were crops that did not work well with the others and where therefore left out. These are: "Rosemary", "Lavender", "Lemon Balm", "Marjoram"
-
     #NEU
     # According to this API Documentation "https://github.com/openfarmcc/OpenFarm/blob/mainline/docs/api_docs.md" crops need a filter to return something.
     # It was unfortunately not possible to query for the tag_array in the OpenFarm API. Therefore we needed to make a preselection based on the most common herbs in Switzerland.
@@ -388,12 +381,6 @@ def filter_function_vegetable():
     st.write("On this page, the recommendations will provide you with an initial idea of plants you can grow at home. For more detailed information, you can simply enter the plant name in the search bar on the '_I Know What I Want_' page.")
     st.write("**Give us some information about your planned planting location and your patience ;)**")
 
-
-    # According to this API Documentation "https://github.com/openfarmcc/OpenFarm/blob/mainline/docs/api_docs.md" Crops need a filter to return something.
-    # It was unfortunately not possible to query for the tag_array in the OpenFarm API. Therefore we needed to make a preselection based on the most common vegetables in Switzerland.
-    # Common vegetables in switzerland: Potato, Lettuce, Tomato, Zucchini, Cucumber, Spinach, Radish, Kale, Broccoli, Cauliflower, Peas, Beans, Onion, Garlic, Leek, Swiss Chard, Beetroot, Pumpkin, Brussels Sprouts, Celery, Cabbage, Sweet Corn, Turnip, Parsnip, Eggplant, Pepper, Fennel
-    # crop_name = "Brassica oleracea, RedPepper, Onion", "Carrot", "Potato, Onion", "Icicle Radish", "Lettuce", "Tomato, Zucchini", "Zucchini", "Spinach", "Radish", "Kale", "Broccoli", "Cauliflower", "Peas", "Green Beans", "Leek", "Swiss Chard, Cabbage", "Beetroot", "Brussels Sprouts", "Celery", "Sweet Corn", "Turnip", "Parsnip", "Eggplant", "Cucumber", "Van Zerden Garlic", "Pepper", "Fennel"
-    # However there were also crops that did not work well with the others and where therefore left out or had to be written twice.
 
     # NEU 
     # According to this API Documentation "https://github.com/openfarmcc/OpenFarm/blob/mainline/docs/api_docs.md" Crops need a filter to return something.
