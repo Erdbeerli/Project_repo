@@ -232,7 +232,6 @@ def filter_function_herb():
     you can grow at home. For more detailed information, you can simply enter the plant name in the search bar on the '_I Know What I Want_' page.""")
     st.write("**Give us some information about your planned planting location and your patience ;)**")
 
-    #NEU
     # According to this API Documentation "https://github.com/openfarmcc/OpenFarm/blob/mainline/docs/api_docs.md" crops need a filter to return something.
     # It was unfortunately not possible to query for the tag_array in the OpenFarm API. Therefore we needed to make a preselection based on the most common herbs in Switzerland.
     # Common herbs in Switzerland are mainly based on the seasonal calender from Swiss Farmers (source: https://www.swiss-farmers.ch/seasonal-calendar/) 
@@ -381,11 +380,10 @@ def filter_function_vegetable():
     st.write("On this page, the recommendations will provide you with an initial idea of plants you can grow at home. For more detailed information, you can simply enter the plant name in the search bar on the '_I Know What I Want_' page.")
     st.write("**Give us some information about your planned planting location and your patience ;)**")
 
-
-    # NEU 
+    
     # According to this API Documentation "https://github.com/openfarmcc/OpenFarm/blob/mainline/docs/api_docs.md" Crops need a filter to return something.
     # It was unfortunately not possible to query for the tag_array in the OpenFarm API. Therefore we needed to make a preselection based on the most common vegetables in Switzerland.
-    # Common vegetables in switzerland were selected based on the seasonal calender from Swiss Farmers (source: https://www.swiss-farmers.ch/seasonal-calendar/) 
+    # Common vegetables in Switzerland were selected based on the seasonal calender from Swiss Farmers (source: https://www.swiss-farmers.ch/seasonal-calendar/) 
     # Beetroot, Bell Pepper, Beans, Broccoli, Brussels Sprouts, Cabbage, Carrot, Cauliflower, Celeriac, Cucumber, Eggplant, Fennel, Garlic, Kale, Leek, Lettuce, Onion, Parsnip, Peas, Potato, Radicchio, Radish, Spinach, Squash, Sweet Corn, Swiss Chard, Tomato, Turnip, Zucchini
     crop_name = "Brassica oleracea", "RedPepper", "Onion", "Carrot", "Potato", "Onion", "Icicle Radish", "Lettuce", "Tomato", "Zucchini", "Zucchini", "Spinach", "Kale", "Broccoli", "Cauliflower", "Peas", "Green Beans", "Leek", "Swiss Chard", "Cabbage", "Beetroot", "Brussels Sprouts", "Celery", "Sweet Corn", "Turnip", "Parsnip", "Eggplant", "Cucumber", "Van Zerden Garlic", "Pepper", "Fennel", "Eggplant", "Radicchio"
     # However there were also crops that did not work well with the others and where therefore left out or had to be written twice.
