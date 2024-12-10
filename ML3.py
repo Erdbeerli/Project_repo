@@ -13,61 +13,48 @@ import pandas as pd
 import requests
 
 def fetch_plant_data():
+    """
+    Fetch plant data for specific crops one by one from OpenFarm API.
+    """
+    crop_names = [
+        "Sorrel", "Parsley", "Thyme", "Italian Oregano", "Basil", "Cilantro", "Sage", "Chives",
+        "Fernleaf Dill", "Chamomile", "Bay Laurel", "Tarragon", "Cress", "Lovage", "Peppermint",
+        "Carrot", "Potato", "Onion", "Lettuce", "Tomato", "Zucchini", "Spinach", "Radish",
+        "Kale", "Broccoli", "Cauliflower", "Peas", "Green Beans", "Leek", "Swiss Chard", 
+        "Beetroot", "Brussels Sprouts", "Celery", "Sweet Corn", "Turnip", "Parsnip", 
+        "Eggplant", "Cucumber", "Garlic", "Pepper", "Fennel"
+    ]
+    
+    base_url = "https://openfarm.cc/api/v1/crops"
+    all_plants = []
 
-    crop_name = "Sorrel, Parsley, Thyme, Italian Oregano, Basil, Cilantro, Sage, Chives, Fernleaf Dill, Chamomile, Bay Laurel, Tarragon, Cress, Lovage, Peppermint, Brassica oleracea, RedPepper, Onion", "Carrot", "Potato, Onion", "Icicle Radish", "Lettuce", "Tomato, Zucchini", "Zucchini", "Spinach", "Radish", "Kale", "Broccoli", "Cauliflower", "Peas", "Green Beans", "Leek", "Swiss Chard, Cabbage", "Beetroot", "Brussels Sprouts", "Celery", "Sweet Corn", "Turnip", "Parsnip", "Eggplant", "Cucumber", "Van Zerden Garlic", "Pepper", "Fennel"
+    # Iterate through each crop name and fetch data
+    for crop in crop_names:
+        try:
+            response = requests.get(f"{base_url}?filter={crop}")
+            if response.status_code == 200:
+                data = response.json()
+                if "data" in data and data["data"]:
+                    for plant in data["data"]:
+                        attributes = plant.get("attributes", {})
+                        tags = attributes.get("tags_array", [])
 
-
-    url = "https://openfarm.cc/api/v1/crops"
-    try:
-        response = requests.get(f"{url}?filter={crop_name}")
-        if response.status_code == 200:
-            data = response.json()
-            if 'data' in data and data['data']:
-                # Filter: Only plants with the tag vegetable or herb
-                filtered_plants = [
-                    {
-                        "plant_name": plant['attributes'].get("name", "Unknown"),
-                        "sun_requirements": plant['attributes'].get("sun_requirements", "unknown"),
-                        "spread": plant['attributes'].get("spread", "unknown"),
-                        "description": plant['attributes'].get("description", "No description available")
-                    }
-                    for plant in data['data']
-                    if "tags_array" in plant['attributes'] and
-                    any(tag in ["vegetable", "herb"] for tag in plant['attributes'].get("tags_array", []))
-                ]
-            else:
-                # If 'data' is missing or empty
-                filtered_plants = []
-        else:
-            # If the API response fails
-            filtered_plants = []
-            st.error(f"Failed to fetch data from OpenFarm API. Status code: {response.status_code}")
-    except Exception as e:
-        # If any exception occurs
-        filtered_plants = []
-        st.error(f"Error fetching plant data: {e}")
-
-    # Check if filtered_plants is empty, use fallback data
-    if not filtered_plants:
-        st.warning("Using fallback plant data.")
-        return pd.DataFrame({
-            "plant_name": ["Tomato", "Basil", "Lettuce"],
-            "sun_requirements": ["full sun", "partial sun", "partial sun"],
-            "spread": [50, 30, 40],
-            "description": [
-                "A delicious red fruit often mistaken as a vegetable.",
-                "A fragrant herb used in Italian cuisine.",
-                "A leafy green vegetable."
-            ]
-        })
+                        # Only include plants with 'herb' or 'vegetable' tags
+                        if any(tag in ["vegetable", "herb"] for tag in tags):
+                            all_plants.append({
+                                "plant_name": attributes.get("name", "Unknown"),
+                                "sun_requirements": attributes.get("sun_requirements", "unknown"),
+                                "spread": attributes.get("spread", "unknown"),
+                                "description": attributes.get("description", "No description available")
+                            })
+        except Exception as e:
+            st.error(f"Error fetching data for {crop}: {e}")
 
     # Convert to DataFrame
-    df = pd.DataFrame(filtered_plants)
-
-    # Ensure required columns are present
-    required_columns = {"plant_name", "sun_requirements", "spread"}
-    if not required_columns.issubset(df.columns):
-        st.error("API data is missing required columns. Using fallback data.")
+    if all_plants:
+        return pd.DataFrame(all_plants)
+    else:
+        st.warning("No valid plant data found. Using fallback data.")
         return pd.DataFrame({
             "plant_name": ["Tomato", "Basil", "Lettuce"],
             "sun_requirements": ["full sun", "partial sun", "partial sun"],
@@ -76,10 +63,7 @@ def fetch_plant_data():
                 "A delicious red fruit often mistaken as a vegetable.",
                 "A fragrant herb used in Italian cuisine.",
                 "A leafy green vegetable."
-            ]
-        })
-
-    return df
+            ]  })
 
 # Debugging and Validation
 def debug_dataframe(df):
@@ -99,14 +83,15 @@ def debug_dataframe(df):
 # Streamlit UI
 st.title("🌱 Plant Fetcher with OpenFarm API")
 
-if st.button("Fetch Plant Data"):
+if st.button("Fetch All Plant Data"):
+    st.write("Fetching plant data... Please wait!")
     plants_df = fetch_plant_data()
+
     if not plants_df.empty:
-        st.success("Successfully fetched plant data!")
-        st.dataframe(plants_df)  # Display the DataFrame
-        debug_dataframe(plants_df)
+        st.success("Successfully fetched all plant data!")
+        st.dataframe(plants_df)  # Display the DataFrame as a single table
     else:
-        st.warning("No plant data fetched.")
+        st.error("No data available. Please try again later.")
 
 # Initialize ML Model
 def initialize_ml_model(df):
