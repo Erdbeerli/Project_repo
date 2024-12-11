@@ -787,3 +787,13 @@ def main():
 
 # Call the main function
 main()
+
+#Directory of Aids
+#ChatGPT: OpenAI. (2023). ChatGPT (version of 01.10.2023) [Large language model]. https://chat.openai.com/chat
+    #Chat GPT was used to answer specific questions and write code snippets, that were adapted by us
+#Streamlit Cheatsheet: https://docs.streamlit.io/library/cheatsheet
+#Streamlit Documentation: https://docs.streamlit.io/
+#Streamlit 30 Days Challenge: https://30days-tmp.streamlit.app/
+#Project from friends: Streamlit_Project.py - Bookly
+#Tutors and lecturers: verbal consulting
+#OpenFarm API Documentation: https://github.com/openfarmcc/OpenFarm/blob/mainline/docs/api_docs.md
