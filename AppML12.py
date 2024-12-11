@@ -85,7 +85,7 @@ def Introduction_WebApp():
    st.write("🔎   If you already know which plant you want to grow, you can search for it in the search bar under the '_I Know What I Want_' tab.")
 
    #description about what to expect under the "Machine Learning" tab
-   st.write("""🌿   Have you spotted an interesting looking herb or plant and want to know its name?
+   st.write("""⚙️   Have you spotted an interesting looking herb or plant and want to know its name?
             Take a picture of it and upload to our Machine Learning feature under the '_Machine Learning_' tab! Trained with data from our API the tool
             analyzes the light conditions and estimated size of your plant to find the best match.
             Start to to discover new plants today!""")
