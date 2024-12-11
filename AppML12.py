@@ -90,6 +90,8 @@ def Introduction_WebApp():
             analyzes the light conditions and estimated size of your plant to find the best match.
             Start to to discover new plants today!""")
 
+   st.write("---")
+
    st.subheader("Who We Are 👩🏼‍💻🧑🏻‍💻👩🏽‍💻🧑🏼‍💻👩🏻‍💻") 
    # the following text was revised with: ChatGPT
    st.write("""We are a team of five bachelor's students at the University of St. Gallen, united
