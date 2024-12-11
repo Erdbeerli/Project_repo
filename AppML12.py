@@ -523,11 +523,9 @@ def display_crop_details(attributes):
 # It was optimized and adjusted when needed based on error statements and other issues
 
 
-# As data from API can only be fetched by using filters, we used a selection of herbs and vegetables as filters
+# As data from the API can only be fetched by using filters, we used a selection of herbs and vegetables as filters
 def fetch_plant_data():
-    """
-    Fetch plant data for specific crops one by one from OpenFarm API.
-    """
+    
     crop_names = [
         "Sorrel", "Parsley", "Thyme", "Italian Oregano", "Basil", "Cilantro", "Sage", "Chives",
         "Fernleaf Dill", "Chamomile", "Bay Laurel", "Tarragon", "Cress", "Lovage", "Peppermint",
@@ -540,7 +538,7 @@ def fetch_plant_data():
     base_url = "https://openfarm.cc/api/v1/crops"
     all_plants = []
 
-    # Iterate through each crop name and fetch data
+    # Iterate through each crop name and fetch the data attributes
     for crop in crop_names:
         try:
             response = requests.get(f"{base_url}?filter={crop}")
@@ -551,7 +549,7 @@ def fetch_plant_data():
                         attributes = plant.get("attributes", {})
                         tags = attributes.get("tags_array", [])
 
-                        # Only look for crops  with a tag called 'herb' or 'vegetable'
+                        # Only look for crops  with a tag called 'herb' or 'vegetable' and add them into a list
                         if any(tag in ["vegetable", "herb"] for tag in tags):
                             all_plants.append({
                                 "plant_name": attributes.get("name", "Unknown"),
@@ -562,7 +560,7 @@ def fetch_plant_data():
         except Exception as e:
             st.error(f"Error fetching data for {crop}: {e}")
 
-    # Convert to DataFrame
+    # Convert the whole List to a DataFrame
     if all_plants:
         return pd.DataFrame(all_plants)
     else:
@@ -593,7 +591,7 @@ def debug_dataframe(df):
             st.success("")
 
 
-# Initialize ML Model
+# Initialize Machine Learning Model
 def initialize_ml_model(df):
     if df.empty:
         st.error("No data available for training.")
@@ -608,16 +606,21 @@ def initialize_ml_model(df):
         st.caption(f"Filtered DataFrame shape: {df.shape}")
 
         # Encode sunlight requirements
+        # The LabelEncoder converts strings into numerical values for the achine learning
         le_sun = LabelEncoder()
         df["sun_encoded"] = le_sun.fit_transform(df["sun_requirements"])
         st.caption("Label encoding for sunlight requirements applied.")
-        st.caption(df[["sun_requirements", "sun_encoded"]].drop_duplicates())  # Show encoding
+
+        # To show the encoding it will display a table
+        st.caption(df[["sun_requirements", "sun_encoded"]].drop_duplicates())  
 
         # Prepare features and labels
         X = df[["sun_encoded", "spread"]]
         y = df["plant_name"]
 
         # Train the model
+        # Explanation of the Random Forest Algorithm: the model is trained using many different inputs and outputs and learns how to clalssify new inputs in the future
+        # The explanation was retrieved from (https://careerfoundry.com/en/blog/data-analytics/what-is-random-forest/#what-is-random-forest)
         model = RandomForestClassifier(random_state=42)
         model.fit(X, y)
         st.success("Machine learning model trained successfully.")
@@ -629,6 +632,7 @@ def initialize_ml_model(df):
 # Function that processes the light condititions
 def process_light_condition(light_condition, le_sun, space, model):
     # LIght conditions are normalised
+    # Makes the data consistent and ensures compatibility with pre-processed data (classes in the LabelEncoder)
     light_condition = light_condition.lower().replace(" ", "_")
     st.write(f"Normalized Light Condition: {light_condition}")
     st.write(f"Available classes in LabelEncoder: {le_sun.classes_}")
@@ -665,8 +669,9 @@ def analyze_image(image):
         return None, None
 
 def process_light_condition(light_condition, le_sun, space, model):
+    
     # Mapping between the generated light conditions and the light conditions in the LabelEncoder
-
+    # Mapping refers to the act of creating a relationship between two sets of items
     light_mapping = {
         "full sun": "Full Sun",
         "partial sun": "Partial Sun",
@@ -674,7 +679,6 @@ def process_light_condition(light_condition, le_sun, space, model):
     }
     
     # Application of Mapping
-    # Mapping refers to the act of creating a relationship between two sets of items
     mapped_light_condition = light_mapping.get(light_condition.lower())
     st.write(f"Mapped Light Condition: {mapped_light_condition}")
     st.write(f"Available classes in LabelEncoder: {le_sun.classes_}")
@@ -689,7 +693,7 @@ def process_light_condition(light_condition, le_sun, space, model):
         return None
 
 
-# Machine Learning function which will be called in the NAVIGATION
+# Machine Learning function which will be called in the NAVIGATION for the matching section
 def image_based_ml(model, le_sun):
     st.title("Image-Based Plant Recommendation")
     uploaded_image = st.file_uploader("Upload an image:", type=["jpg", "png", "jpeg"])
